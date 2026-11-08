@@ -98,6 +98,7 @@ h1 {
   font-size: 3.5rem;
   color: #fff;
   text-transform: uppercase;
+  margin: 0;
 }
 
 h2 {
@@ -264,7 +265,8 @@ header {
 }
 
 .filter-repos:focus {
-  outline: 2px solid #483978;
+  outline: 3px solid #483978;
+  outline-offset: 3px;
 }
 
 .repo-list {
@@ -290,6 +292,11 @@ header {
 .repo-data a:hover,
 .repo-data a:focus-visible {
   background-color: #2f2550;
+}
+
+.repo-data a:focus-visible {
+  outline: 3px solid #483978;
+  outline-offset: 3px;
 }
 
 .repo-data button:hover,
@@ -344,14 +351,14 @@ header {
   .repo {
     width: calc((100% - 4rem) / 3);
   }
-}
+
 
  body {
     margin-left: 2rem;
     margin-right: 2rem;
     padding: 0 3rem;
   }
-
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */

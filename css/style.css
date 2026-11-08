@@ -83,6 +83,7 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
 body {
   background-color: #fbf9de;
   color: #333;
@@ -111,6 +112,7 @@ header {
 .fa-github-alt {
   color: #f86d58;
 }
+
 .repo-name {
   background-color: #fff;
   border: 1px solid #f7614a;
@@ -121,6 +123,7 @@ header {
   padding: 1rem;
   text-align: left;
   cursor: pointer;
+  width: 100%;
 }
 
 .repo-name:hover {
@@ -157,25 +160,25 @@ header {
 }
 
 .badge {
-    height: 80px;
-    width: 50px;
-    background-color: grey;
-    z-index: 98;
-    margin: 10px auto -35px auto;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  height: 80px;
+  width: 50px;
+  background-color: grey;
+  z-index: 98;
+  margin: 10px auto -35px auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 .circle {
-    width: 20px;
-    height: 20px;
-    background-color: #483978;
-    border-radius: 100%;
-    z-index: 99;
-    align-self: center;
-    margin-top: auto;
-    margin-bottom: 8px;
+  width: 20px;
+  height: 20px;
+  background-color: #483978;
+  border-radius: 100%;
+  z-index: 99;
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: 8px;
 }
 
 .user-info {
@@ -236,15 +239,31 @@ header {
   outline: 2px solid #483978;
 }
 
+.repo-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 0;
+}
+
+.repo {
+  width: 75%;
+}
+
 .repo-name:hover,
 .repo-name:focus-visible {
   background-color: #f7614a;
   color: #fff;
 }
+
 .repo-data a:hover,
 .repo-data a:focus-visible {
   background-color: #2f2550;
 }
+
 .repo-data button:hover,
 .repo-data button:focus-visible {
   background-color: gray;

@@ -168,7 +168,14 @@ header {
     position: relative;
 }
 
+.user-info {
+  background-color: #483978;
+  color: #fff;
+}
 
+.user-info p {
+  border-bottom: 1px solid #9b8dc9;
+}
 
 
 /* ==========================================================================

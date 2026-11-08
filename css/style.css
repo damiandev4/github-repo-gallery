@@ -167,6 +167,16 @@ header {
     flex-direction: column;
     position: relative;
 }
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #483978;
+    border-radius: 100%;
+    z-index: 99;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 8px;
+}
 
 .user-info {
   background-color: #483978;
@@ -175,6 +185,40 @@ header {
 
 .user-info p {
   border-bottom: 1px solid #9b8dc9;
+}
+.repos,
+.repo-data {
+  background-color: #fff;
+}
+
+.filter-repos {
+  border: 2px solid #483978;
+  color: #333;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.75rem 1rem;
+}
+
+.fa-search {
+  color: #483978;
+}
+
+.filter-repos:focus {
+  outline: 2px solid #483978;
+}
+
+.repo-name:hover,
+.repo-name:focus-visible {
+  background-color: #f7614a;
+  color: #fff;
+}
+.repo-data a:hover,
+.repo-data a:focus-visible {
+  background-color: #2f2550;
+}
+.repo-data button:hover,
+.repo-data button:focus-visible {
+  background-color: gray;
 }
 
 

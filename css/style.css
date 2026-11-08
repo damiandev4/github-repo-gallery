@@ -89,6 +89,7 @@ body {
   color: #333;
   font-family: "Open Sans", sans-serif;
   font-size: 1.125rem;
+  padding: 0 0.75rem;   /* NEW */
 }
 
 h1 {
@@ -103,10 +104,13 @@ h2 {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
-}
+} 
 
 header {
   background-color: #483978;
+  border-radius: 1.25rem 1.25rem 0 0;  /* NEW */
+  padding: 0 1rem;                     /* NEW */
+  text-align: center;                  /* NEW */
 }
 
 .fa-github-alt {
@@ -159,6 +163,13 @@ header {
   background-color: gray;
 }
 
+.repo-data a,
+.repo-data button {
+  align-self: stretch;
+  max-width: 14rem;
+  text-align: center;
+}
+
 .badge {
   height: 80px;
   width: 50px;
@@ -208,6 +219,23 @@ header {
 .repos,
 .repo-data {
   background-color: #fff;
+}
+
+.repo-data {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.repo-data h2,
+.repo-data p {
+  margin: 0;
+}
+
+.repo-data h2 {
+  color: #f7614a;
 }
 
 .repos {

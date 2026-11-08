@@ -207,16 +207,29 @@ header {
   background-color: #fff;
 }
 
+.repos {
+  padding: 2rem 1.5rem;
+}
+
+.search-wrapper {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
 .filter-repos {
   border: 2px solid #483978;
   color: #333;
+  flex: 1;                  /* NEW */
   font-family: inherit;
   font-size: inherit;
+  min-width: 0;             /* NEW */
   padding: 0.75rem 1rem;
 }
 
 .fa-search {
   color: #483978;
+  font-size: 1.5rem;        /* NEW */
 }
 
 .filter-repos:focus {

@@ -109,9 +109,9 @@ h2 {
 
 header {
   background-color: #483978;
-  border-radius: 1.25rem 1.25rem 0 0;  /* NEW */
-  padding: 0 1rem;                     /* NEW */
-  text-align: center;                  /* NEW */
+  border-radius: 1.25rem 1.25rem 0 0;  
+  padding: 2.5rem 1rem 0;                     
+  text-align: center;                
 }
 
 .fa-github-alt {
@@ -121,7 +121,7 @@ header {
 .repo-name {
   background-color: #fff;
   border: 1px solid #f7614a;
-  color: #f7614a;
+  color:#d03f24;
   font-family: inherit;
   font-size: inherit;
   font-weight: 700;
@@ -129,11 +129,6 @@ header {
   text-align: left;
   cursor: pointer;
   width: 100%;
-}
-
-.repo-name:hover {
-  background-color: #f7614a;
-  color: #fff;
 }
 
 .repo-data a {
@@ -145,10 +140,6 @@ header {
   text-decoration: none;
 }
 
-.repo-data a:hover {
-  background-color: #2f2550;
-}
-
 .repo-data button {
   background-color: #efefef;
   border: 1px solid #ccc;
@@ -158,10 +149,6 @@ header {
   font-family: inherit;
   font-size: inherit;
   padding: 0.75rem 1.5rem;
-}
-
-.repo-data button:hover {
-  background-color: gray;
 }
 
 .repo-data a,
@@ -285,7 +272,7 @@ header {
 
 .repo-name:hover,
 .repo-name:focus-visible {
-  background-color: #f7614a;
+  background-color: #d03f24;
   color: #fff;
 }
 
@@ -302,6 +289,7 @@ header {
 .repo-data button:hover,
 .repo-data button:focus-visible {
   background-color: gray;
+  color: #000;
 }
 
 @media (min-width: 700px) {

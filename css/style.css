@@ -297,9 +297,60 @@ header {
   background-color: gray;
 }
 
+@media (min-width: 700px) {
+  .user-info {
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+    text-align: left;
+  }
 
+  .user-info img {
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
 
+  .user-details {
+    flex: 1;
+    max-width: 28rem;
+  }
 
+  .search-wrapper {
+    justify-content: center;
+  }
+
+  .filter-repos {
+    max-width: 25rem;
+  }
+
+  .repo-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .repo {
+    width: calc(50% - 1rem);
+  }
+
+  body {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .repo {
+    width: calc((100% - 4rem) / 3);
+  }
+}
+
+ body {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 0 3rem;
+  }
 
 /* ==========================================================================
    Helper classes

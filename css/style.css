@@ -181,11 +181,27 @@ header {
 .user-info {
   background-color: #483978;
   color: #fff;
+  display: flex;             /* NEW */
+  flex-direction: column;    /* NEW */
+  padding: 2rem 1.5rem;      /* NEW */
+  text-align: center;        /* NEW */
 }
 
 .user-info p {
   border-bottom: 1px solid #9b8dc9;
+  margin: 0;                 /* NEW */
+  padding: 1rem 0;           /* NEW */
 }
+
+.user-info img {
+  align-self: center;
+  border-radius: 50%;
+  height: 12rem;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  width: 12rem;
+}
+
 .repos,
 .repo-data {
   background-color: #fff;
@@ -220,6 +236,9 @@ header {
 .repo-data button:focus-visible {
   background-color: gray;
 }
+
+
+
 
 
 /* ==========================================================================

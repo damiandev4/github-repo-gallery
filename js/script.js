@@ -1,5 +1,6 @@
 const userData = document.querySelector("user-data");
 const username = "damiandev";
+const displayRepoList = document.querySelector("repo-list")
 
 const gitUserInfo = async function () { // create and name an async function to fetch information from your GitHub profile
   const userInfo = await fetch(`https://api.github.com/users/${username}`); // using the GitHub API address: https://api.github.com. Target the “users” endpoint and use a template literal to add the global username variable to the endpoint: users/${username} // using the GitHub API address: https://api.github.com. Target the “users” endpoint and use a template literal to add the global username variable to the endpoint: users/${username} (add “$” in front of variable name to create a placeholder).
@@ -24,4 +25,20 @@ const displayUserInfo = function (data) {  // Below async function create and na
     </div>
   `;
   userData.append(div); //Append the div to the element that wraps around the container for the user info using the class name you’ve chosen for this wrapper.
+};
+
+const gitRepos = async function () {  //create and name a new async function to fetch your repos
+  const fetchRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`); //Add parameters to API call.
+  const repoData = await fetchRepos.json(); // second await statement should return the JSON response
+  displayRepos(repoData);
+};
+
+const displayRepos = function (repos) {  //create and name a function to display information about each repo. Use repos as a parameter so that the function accepts the data returned from your last API call
+for (const repo of repos) {
+  const repoItem = document.createElement("li"); // Inside the function, loop and create a list item for each repo and give each item:
+  repoItem.classList.add("repo"); // A class of “repo” (if you are starting with your own HTML/CSS, use the same class name you chose for the repo card)
+  repoItem.innerHTML = `<button type="button" class="repo-name">${repo.name}</button>`; // A <button> element with a class of “repo-name” with the repo name.if you are starting with your own HTML/CSS, use the class you chose
+  repoList.append(repoItem); //Append the list item to the global variable that selects the unordered repos list
+  }
+  console.log(displayRepos);
 };

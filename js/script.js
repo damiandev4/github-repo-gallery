@@ -14,10 +14,11 @@ const displayUserInfo = function (data) {  // Below async function create + name
   const div = document.createElement("div"); // Inside the function, create the same element used to contain the user info (the container for the user avatar, name, bio, location, and number of public repos), 
   div.classList.add("user-info"); // and give it a class that matches what you’ve named it.
 // Using innerHTML, populate the div by doing a copy and paste of the exact structure of everything within the element container that contains your user info
-  div.innerHTML = `  
+  div.innerHTML = `
+    <figure>  
       <img alt="user avatar" src=${data.avatar_url} /> 
     </figure>
-    <div>
+    <div class= "user-details">
       <p><strong>Name:</strong> ${data.name}</p>
       <p><strong>Bio:</strong> ${data.bio}</p>
       <p><strong>Location:</strong> ${data.location}</p>

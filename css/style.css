@@ -191,8 +191,8 @@ header {
 
 .user-info p {
   border-bottom: 1px solid #9b8dc9;
-  margin: 0;                 /* NEW */
-  padding: 1rem 0;           /* NEW */
+  margin: 0;                 
+  padding: 1rem 0;           
 }
 
 .user-info img {
@@ -336,10 +336,18 @@ header {
 }
 
 @media (min-width: 1200px) {
+  .user-info {
+    padding: 2rem 3rem;
+  }
+  
+  .user-details {
+    flex: 1;
+    max-width: 40rem;
+  }
+
   .repo {
     width: calc((100% - 4rem) / 3);
   }
-
 
  body {
     margin-left: 2rem;

@@ -337,11 +337,10 @@ header {
 
 @media (min-width: 1200px) {
   .user-info {
-    padding: 2rem 3rem;
+    padding: 1.5rem 4rem;
   }
   
   .user-details {
-    flex: 1;
     max-width: 40rem;
   }
 

@@ -1,6 +1,8 @@
 const userData = document.querySelector(".user-data");
 const username = "damiandev4";
-const repoList = document.querySelector(".repo-list")
+const repoList = document.querySelector(".repo-list");
+const allRepos = document.querySelector(".repos");
+const repoData = document.querySelector(".repo-data");
 
 const gitUserInfo = async function () { // create and name an async function to fetch information from your GitHub profile
   const userInfo = await fetch(`https://api.github.com/users/${username}`); // using the GitHub API address: https://api.github.com. Target the “users” endpoint and use a template literal to add the global username variable to the endpoint: users/${username} // using the GitHub API address: https://api.github.com. Target the “users” endpoint and use a template literal to add the global username variable to the endpoint: users/${username} (add “$” in front of variable name to create a placeholder).
@@ -43,3 +45,43 @@ for (const repo of repos) {
   repoList.append(repoItem); //Append the list item to the global variable that selects the unordered repos list
   }
 };
+
+  repoList.addEventListener("click", function (e) { // create an event listener called repoList for a click event on the unordered list with a class of “repo-list.” Pass the event (e) in the callback function. 
+  if (e.target.matches(".repo-name")) {  //Add a conditional statement to check if the event target (i.e., the element that was clicked on) matches the class “.repo-name”
+    const repoName = e.target.innerText; //In the body of the conditional statement, create a variable called repoName to target the innerText where the event happens
+    getRepoInfo(repoName); //call this async function, passing repoName as an argument
+  }
+});
+
+const getRepoInfo = async function (repoName) { //create and name an async function to get specific repo information that accepts repoName as a parameter
+  const fetchInfo = await fetch(`https://api.github.com/repos/${username}/${repoName}`); //In the function, make a fetch request to grab information about the specific repository
+  const repoInfo = await fetchInfo.json();  //Declare a variable called repoInfo to resolve and save the JSON response
+  console.log(repoInfo);
+//get languages
+  const fetchLanguages = await fetch(repoInfo.languages_url); //inside async function to get specific repo information, create a variable called fetchLanguages to fetch data from languages_url property of your repoInfo
+  const languageData = await fetchLanguages.json(); // Create a variable called languageData to save the JSON response
+//make languages list
+  const languages = []; //add each language to an empty array called languages
+  for (const language in languageData) {
+    languages.push(language); //add the languages to the end of the array
+  } 
+  displayRepoInfo(repoInfo, languages); //call the function to display the repo info. Pass it the repoInfo object and the languages array.
+  };
+
+  const displayRepoInfo = function (repoInfo, languages) { //Below the async function to get specific repo info, create and name a new function to display the specific repo info. It should accept two parameters: repoInfo and languages.
+  repoData.innerHTML = ""; // Inside the function, empty the HTML of the section with a class of “repo-data” where the individual repo data will appear.
+  repoData.classList.remove("hide");  //Unhide (show) this wrapper element with the class name you chose
+  allRepos.classList.add("hide"); //Hide the element that contains the repo gallery view.
+  const div = document.createElement("div");
+  div.classList.add("repo-info");
+  div.innerHTML = `
+    <h2>Name: ${repoInfo.name}</h2>
+    <p>Description: ${repoInfo.description}</p>
+    <p>Default Branch: ${repoInfo.default_branch}</p>
+    <p>Languages: ${languages.join(", ")}</p>
+    <a class="visit" href="${repoInfo.html_url}" target="_blank" rel="noreferrer noopener">View Repo on GitHub!</a>
+  `;
+  repoData.append(div); //Append the new div element to the element that wraps around all of the repo data. 
+  };
+
+

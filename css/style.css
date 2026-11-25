@@ -89,7 +89,58 @@ body {
   color: #333;
   font-family: "Open Sans", sans-serif;
   font-size: 1.125rem;
-  padding: 0 0.75rem;   /* NEW */
+  padding: 0 0.75rem;   
+}
+
+.hide {
+  /* '!important' is to make sure that when we add the class using JS, it takes precedence */
+  display: none !important;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+/*
+ * Extends the .visually-hidden class to allow the element to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+.view-repos {
+  margin-top: 1.5em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  align-self: center;
+  width: 300px;
+  border-radius: 20px;
+}
+
+.fa-github-alt {
+  color: #f86d58;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1 {
@@ -169,6 +220,7 @@ header {
   flex-direction: column;
   position: relative;
 }
+
 .circle {
   width: 20px;
   height: 20px;
@@ -183,10 +235,10 @@ header {
 .user-info {
   background-color: #483978;
   color: #fff;
-  display: flex;             /* NEW */
-  flex-direction: column;    /* NEW */
-  padding: 2rem 1.5rem;      /* NEW */
-  text-align: center;        /* NEW */
+  display: flex;             
+  flex-direction: column;    
+  padding: 2rem 1.5rem;      
+  text-align: center;        
 }
 
 .user-info p {
@@ -230,25 +282,25 @@ header {
   padding: 2rem 1.5rem;
 }
 
-.search-wrapper {
-  align-items: center;
+.search-container {
   display: flex;
-  gap: 1rem;
+  align-items: center;
 }
 
 .filter-repos {
   border: 2px solid #483978;
   color: #333;
-  flex: 1;                  /* NEW */
+  flex: 1;                  
   font-family: inherit;
   font-size: inherit;
-  min-width: 0;             /* NEW */
+  min-width: 0;             
   padding: 0.75rem 1rem;
 }
 
 .fa-search {
   color: #483978;
-  font-size: 1.5rem;        /* NEW */
+  font-size: 1.5rem; 
+  padding-right: 1rem;       
 }
 
 .filter-repos:focus {
@@ -292,6 +344,13 @@ header {
   color: #000;
 }
 
+.button-container {
+  width: 100%;
+  background-color: #fff;
+  padding-left: 2em;
+  padding-bottom: 2em;
+}
+
 @media (min-width: 700px) {
   .user-info {
     align-items: center;
@@ -311,7 +370,7 @@ header {
     max-width: 28rem;
   }
 
-  .search-wrapper {
+  .search-container {
     justify-content: center;
   }
 

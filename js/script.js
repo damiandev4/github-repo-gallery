@@ -34,7 +34,7 @@ const displayUserInfo = function (data) {  // Below async function create + name
 };
 
 const gitRepos = async function () {  //create and name a new async function to fetch your repos
-  const fetchRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=12`); //Add parameters to API call.
+  const fetchRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`); //Add parameters to API call.
   const repoData = await fetchRepos.json(); // second await statement should return the JSON response
   displayRepos(repoData);
 };
